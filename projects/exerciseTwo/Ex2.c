@@ -8,7 +8,7 @@
 #include <string.h>
 #include <ctype.h>
 
-// Global static variables
+// Global static variables init
 #define MAX_TERMS 20
 #define MAX_STR 200
 
@@ -90,7 +90,6 @@ void encode(char str[], char key[], char e[], char* terms[]){
 
 
 void getIthElement(char e[], char* terms[], int i, char out[]){
-	int counter = 0;
 	int tmp = 0;
 	// if i is bigger than the terms len, meaning we found NULL, we return empty string.
 	if (terms[i] == NULL){
@@ -108,34 +107,6 @@ void getIthElement(char e[], char* terms[], int i, char out[]){
 			out[j] = 0;
 		}
 	}
-
-
-	printf("word at %d is :%s\n", i, out);
-}
-
-int main(int argc, char const *argv[])
-
-{
-	char str[] = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard hello";
-	char key[] = "atlm";
-	char e[MAX_STR];
-	char myE[] = "wx wavx n ooncee";
-	char out[MAX_STR];
-	char* terms[MAX_TERMS];
-
-	encode(str, key, e, terms);
-
-	printf("Original is: %s\n", str);
-	printf("Key is: %s\n", key);
-	printf("Encoded is: %s\n", e);
-	printf("Terms is: %s\n", *terms);
-	printf("pointers values are: %p, %p, %p, %p\n", &(*terms[0]), &(*terms[1]), &(*terms[2]), &(*terms[19]));
-	printf("pointers values are: %c, %c, %c, %c\n", *terms[0], *terms[1], *terms[2], *terms[19]);
-	for (int i = 0; i < 20; i++){
-		getIthElement(myE, terms, i, out);
-	}
-	// printf("starts at: %p, Encoded is: %p\n",);
-	return 0;
 }
 
 

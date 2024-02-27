@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
 	addMonom(&polynom, -1, 2);
 	addMonom(&polynom, 4, 2);
 	addMonom(&polynom, 5, 4);
-	addMonom(&polynom, 4, 0);
+	addMonom(&polynom, 4, -1);
 	addMonom(&polynom, -2, 0);
 	
 	printMonom(polynom.monoms[0]);
